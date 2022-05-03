@@ -16,6 +16,7 @@ interface Message {
 const users: RoomUser[] = [];
 const messages: Message[] = [];
 
+// Comunicação entre cliente e servidor
 io.on("connection", (socket) => {
   socket.on("select_room", (data, callback) => {
     socket.join(data.room);
@@ -36,6 +37,7 @@ io.on("connection", (socket) => {
 
     const messagesRoom = getMessagesRoom(data.room);
     callback(messagesRoom);
+    console.log(users)
   });
 
   socket.on("message", (data) => {
@@ -49,6 +51,7 @@ io.on("connection", (socket) => {
     messages.push(message);
 
     io.to(data.room).emit("message", message);
+    
   });
 });
 

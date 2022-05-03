@@ -9,3 +9,4 @@ btn.addEventListener('click', (event) => {
 
     select.appendChild(salaNova)
 })
+

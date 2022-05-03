@@ -37,10 +37,10 @@ io.on("connection", (socket) => {
 
     const messagesRoom = getMessagesRoom(data.room);
     callback(messagesRoom);
-    console.log(users)
   });
 
   socket.on("message", (data) => {
+    // Salvar mensagens
     const message: Message = {
       room: data.room,
       username: data.username,
@@ -48,6 +48,7 @@ io.on("connection", (socket) => {
       createdAt: new Date(),
     };
 
+    // Enviar para usuários da sala
     messages.push(message);
 
     io.to(data.room).emit("message", message);

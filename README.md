@@ -11,6 +11,7 @@ npm run dev
 ```
 ## Compreensão da interface e utilização da aplicação
 Ao acessar o localhost:3000, esta será a primeira tela vista:
+
 <img src="./images/tela_1.png">
 
 Para entrar ou criar alguma sala, é necessário realizar os seguintes passos:
